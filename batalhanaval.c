@@ -5,6 +5,9 @@
 
 */
 
+//falta colocar os navios no tabuleiro
+//falta fazer com condição de sobreposição dos navios
+
 
 #include <stdio.h>
 
@@ -12,8 +15,10 @@ int main ()
 {
     int linhas[10] = {0,1,2,3,4,5,6,7,8,9};
     char colunas[10] = {'A','B','C','D','E','F','G','H','I','J'};
+    int navio_vertical;
+    int navio_horizontal;
 
-    //Criação do Tabuleiro Vazio
+    //Criação do Tabuleiro Vazio, zero = água
     int tabuleiro[10][10] = {
 
         {0,0,0,0,0,0,0,0,0,0},
@@ -29,13 +34,25 @@ int main ()
 
                              };
     
+    //Posicionamento do navio horizontal
+    for(navio_horizontal=0; navio_horizontal<3; navio_horizontal++)
+    {
+        tabuleiro[2][1+navio_horizontal]=tabuleiro[2][1+navio_horizontal]+3;
+    }
+    //Posicionamento do navio vertical
+    for(navio_vertical=0; navio_vertical<3; navio_vertical++)
+    {
+        tabuleiro[5+navio_vertical][8]=tabuleiro[5+navio_vertical][8]+3;
+    }
+    
+    
     //Imprimir o tabuleiro na tela 
     for(int i=0; i<10; i++) // i == imprimir as linhas
     {
         
-        if(i==0)
+        if(i==0) // Imprimir Colunas de A-J na parte superior do tabuleiro
         {
-            printf("\t  ");
+            printf("\t   ");
             for(int i=0; i<10; i++)
             {
                 printf(" %c", colunas[i]);
@@ -54,7 +71,7 @@ int main ()
         
     }
 
-
+    printf("\n");
 
     return 0;
 }
