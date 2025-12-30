@@ -10,6 +10,8 @@
 
 int main ()
 {
+    int linhas[10] = {0,1,2,3,4,5,6,7,8,9};
+
     //Criação do Tabuleiro Vazio
     int tabuleiro[10][10] = {
 
@@ -29,11 +31,15 @@ int main ()
     //Imprimir o tabuleiro na tela 
     for(int i=0; i<10; i++) // i == imprimir as linhas
     {
+        printf("\t%d  ", linhas[i]); //imprime o numero da linha ao lado do tabuleiro
+        
         for(int j=0; j<10; j++) // j == imprimir as colunas
         {
             printf("%d ", tabuleiro[i][j]);
         }
-        printf("\t\n"); //Quando termina de imrpimir uma linha, pula pra linha de baixo
+        
+        printf("\n"); //Quando termina de imrpimir uma linha, pula pra linha de baixo
+        
     }
 
 
