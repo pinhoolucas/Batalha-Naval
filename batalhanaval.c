@@ -43,7 +43,7 @@ int main ()
             printf("\n\n");
         }
         
-        printf("\t%d  ", linhas[i]); //imprime o numero da linha ao lado do tabuleiro
+        printf("\t%d   ", linhas[i]); //imprime o numero da linha ao lado do tabuleiro
         
         for(int j=0; j<10; j++) // j == imprimir as colunas
         {
