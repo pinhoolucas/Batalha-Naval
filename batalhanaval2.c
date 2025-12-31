@@ -76,32 +76,31 @@ int main ()
     {
         printf("\n\tERRO: NAVIO FORA DO TABULEIRO\n");
     }
-    
-    
-        //Imprimir tabuleiro
-        for(int i=0; i<LINHA; i++)
+        
+    //Imprimir tabuleiro
+    for(int i=0; i<LINHA; i++)
+    {
+        //Imprimir cabeçalho
+        if(i==0)
         {
-            //Imprimir cabeçalho
-            if(i==0)
+            printf("\n\t    ");
+            for(int a=0; a<COLUNA; a++)
             {
-                printf("\n\t    ");
-                for(int a=0; a<COLUNA; a++)
-                {
-                    printf("%c ", cabecalho[a]);
-                }
-                printf("\n\n");
+                printf("%c ", cabecalho[a]);
             }
-
-            //imprimir numero da linha
-            printf("\t%d   ", linhas[i]);
-
-            //imprimir colunas
-            for(int j=0; j<COLUNA; j++)
-            {
-                printf("%d ", tabuleiro[i][j]);
-            }
-            printf("\n");
+            printf("\n\n");
         }
+
+        //imprimir numero da linha
+        printf("\t%d   ", linhas[i]);
+
+        //imprimir colunas
+        for(int j=0; j<COLUNA; j++)
+        {
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
     
     return 0;
 }
