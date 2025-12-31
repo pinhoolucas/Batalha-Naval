@@ -1,17 +1,3 @@
-/*
--> Matriz 10x10 representando o tabuleiro
--> zero representa a água
--> as posições ocupadas pelos navios são representadas pelo número 3
--> se a soma das posicoes for 6. Significa que houve sobreposição
--> linhas 36 à 46 são responsáveis por "plantar" os navios no tabuleiro
--> linhas 66 à 74 são responsáveis pelo cabeçalho do tabuleiro
--> linha 76 enumera das linhas ao lado do tabuleiro
--> linhas 79 à 83 imprime as colunas junto ao for que começa na linha 66, que imprime as linhas
--> não há ainda lógica de jogo ou movimentação dos navios
-*/
-
-
-
 #include <stdio.h>
 
 int main ()
