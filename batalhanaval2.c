@@ -20,7 +20,7 @@ int main ()
         //Imprimir cabeçalho
         if(i==0)
         {
-            printf("\n\t   ");
+            printf("\n\t    ");
             for(int a=0; a<COLUNA; a++)
             {
                 printf("%c ", cabecalho[a]);
@@ -29,7 +29,7 @@ int main ()
         }
 
         //imprimir numero da linha
-        printf("\t%d  ", linhas[i]);
+        printf("\t%d   ", linhas[i]);
 
         //imprimir colunas
         for(int j=0; j<COLUNA; j++)
