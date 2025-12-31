@@ -14,6 +14,14 @@ int main ()
     int navio3[3]={3,3,3}, linha3 = 5, coluna3 = 4; //diagonal p/ baixo e p/ direita
     int navio4[3]={3,3,3}, linha4 = 9, coluna4 = 0; //diagonal p/ cima e p/ direita
 
+    //falta fazer deteccao de sobreposicao e saida do tabuleiro
+
+
+
+
+
+
+
     //Colocando navio 01
     for(int i=0; i<3; i++)
     {
