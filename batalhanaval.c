@@ -38,11 +38,25 @@ int main ()
     for(navio_horizontal=0; navio_horizontal<3; navio_horizontal++)
     {
         tabuleiro[2][1+navio_horizontal]=tabuleiro[2][1+navio_horizontal]+3;
+        //A soma dentro do [] define a posição, enquanto a soma fora, aumenta o valor de zero para 3.
     }
     //Posicionamento do navio vertical
     for(navio_vertical=0; navio_vertical<3; navio_vertical++)
     {
         tabuleiro[5+navio_vertical][8]=tabuleiro[5+navio_vertical][8]+3;
+        //A soma dentro do [] define a posição, enquanto a soma fora, aumenta o valor de zero para 3.
+    }
+
+    //Condição de sobreposição de navios
+    for(int a=0; a<10; a++)
+    {
+        for(int b=0; b<10; b++)
+        {
+            if (tabuleiro[a][b]==6)
+            {
+                printf("\nErro: Houve sobreposicao de navios!\n");
+            }
+        }
     }
     
     
