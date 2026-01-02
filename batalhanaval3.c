@@ -14,8 +14,9 @@ char cabecalho[10] = {'A','B','C','D','E','F','G','H','I','J'};
 int linhas[10] = {0,1,2,3,4,5,6,7,8,9};
 
 /*=====ESTRUTURA DO CONE 3X5  (1)=====*/
+printf("\t----> HABILIDADE CONE\n\n");
 for(int i=0; i<3; i++){
-    printf("\t");
+    printf("\t\t");
     for(int j=0; j<5; j++){
         
         cone[i][j]=0;
@@ -37,8 +38,9 @@ for(int i=0; i<3; i++){
 printf("\n");
 
 /*=====ESTRUTURA DO CRUZ 5X5  (5)=====*/
+printf("\t----> HABILIDADE CRUZ\n\n");
 for(int i=0; i<5; i++){
-    printf("\t");
+    printf("\t\t");
     for (int j=0; j<5; j++){
         
         cruz[i][j]=0;
@@ -57,8 +59,9 @@ for(int i=0; i<5; i++){
 printf("\n");
 
 /*=====ESTRUTURA DO Losango 5X5 (7)=====*/
+printf("\t----> HABILIDADE LOSANGO\n\n");
 for(int i=0; i<5; i++){
-    printf("\t");
+    printf("\t\t");
     for(int j=0; j<5; j++){
         
         losango[i][j]=0;
@@ -85,7 +88,6 @@ for(int i=0; i<5; i++){
     }
     printf("\n");
 }
-
 
 /*=====ESTRUTURA BÁSICA DO TABULEIRO=====*/
 
