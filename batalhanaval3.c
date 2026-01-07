@@ -13,6 +13,10 @@ int losango [5][5] = {0};
 char cabecalho[10] = {'A','B','C','D','E','F','G','H','I','J'};
 int linhas[10] = {0,1,2,3,4,5,6,7,8,9};
 
+int linha_cone = 0, coluna_cone = 1;
+int linha_cruz = 3, coluna_cruz = 5;
+int linha_losango= 4, coluna_losango = 0;
+
 /*=====ESTRUTURA DO CONE 3X5  (1)=====*/
 printf("\t----> HABILIDADE CONE\n\n");
 for(int i=0; i<3; i++){
@@ -35,6 +39,14 @@ for(int i=0; i<3; i++){
     printf("\n");
 }
 
+// --> Copiando a Matriz do Cone para o tabuleiro
+
+for(int i=0; i<3; i++){
+    for(int j=0; j<5; j++){
+        tabuleiro[linha_cone+i][coluna_cone+j] = cone[i][j];
+    }
+}
+
 printf("\n");
 
 /*=====ESTRUTURA DO CRUZ 5X5  (5)=====*/
@@ -54,6 +66,14 @@ for(int i=0; i<5; i++){
         printf("%d ", cruz[i][j]);
     }
     printf("\n");
+}
+
+// --> Copiando a Matriz da Cruz para o tabuleiro
+
+for(int i=0; i<5; i++){
+    for(int j=0; j<5; j++){
+        tabuleiro[linha_cruz+i][coluna_cruz+j] = cruz[i][j];
+    }
 }
 
 printf("\n");
@@ -86,6 +106,15 @@ for(int i=0; i<5; i++){
         }
         printf("%d ", losango[i][j]);
     }
+    
+// --> Copiando a Matriz do Losango para o tabuleiro
+
+for(int i=0; i<5; i++){
+    for(int j=0; j<5; j++){
+        tabuleiro[linha_losango+i][coluna_losango+j] = losango[i][j];
+    }
+}
+
     printf("\n");
 }
 
@@ -103,6 +132,7 @@ for(int i=0; i<LINHA; i++){
 
     printf("\t%d  ", linhas[i]);
 
+    
     for(int j=0; j<COLUNA; j++){
         printf("%d ", tabuleiro[i][j]);
     }
