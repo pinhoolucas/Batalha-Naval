@@ -13,9 +13,18 @@ int losango [5][5] = {0};
 char cabecalho[10] = {'A','B','C','D','E','F','G','H','I','J'};
 int linhas[10] = {0,1,2,3,4,5,6,7,8,9};
 
-int linha_cone = 0, coluna_cone = 1;
-int linha_cruz = 3, coluna_cruz = 5;
-int linha_losango= 4, coluna_losango = 0;
+int linha_cone = 0, coluna_cone = 1; //Informe a Linha/Coluna do Cone
+if(linha_cone>9 || linha_cone<0 || coluna_cone>9 || coluna_cone<0){
+    fora_tabuleiro++;
+}
+int linha_cruz = 3, coluna_cruz = 5; //Informe a Linha/Coluna da Cruz
+if(linha_cruz>9 || linha_cruz<0 || coluna_cruz>9 || coluna_cruz<0){
+    fora_tabuleiro++;
+}
+int linha_losango= 4, coluna_losango = 0; //Informe a Linha/Coluna do Losango
+if(linha_losango>9 || linha_losango<0 || coluna_losango>9 || coluna_losango<0){
+    fora_tabuleiro++;
+}
 
 /*=====ESTRUTURA DO CONE 3X5  (1)=====*/
 printf("\t----> HABILIDADE CONE\n\n");
