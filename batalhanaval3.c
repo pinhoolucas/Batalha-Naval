@@ -8,7 +8,7 @@ int main (){
 int tabuleiro[10][10] = {0};
 int cone[3][5] = {0};
 int cruz[5][5] = {0};
-int vet_unitario[3] = {7};
+int vet_unitario[3] = {7}, sobreposicao=0;
 int losango [5][5] = {0};
 char cabecalho[10] = {'A','B','C','D','E','F','G','H','I','J'};
 int linhas[10] = {0,1,2,3,4,5,6,7,8,9};
@@ -39,13 +39,26 @@ for(int i=0; i<3; i++){
     printf("\n");
 }
 
-// --> Copiando a Matriz do Cone para o tabuleiro
+// --> Verificando sobreposição do Cone
+sobreposicao = 0;
 
-for(int i=0; i<3; i++){
-    for(int j=0; j<5; j++){
-        tabuleiro[linha_cone+i][coluna_cone+j] = cone[i][j];
+for(int i = 0; i < 3; i++){
+    for(int j = 0; j < 5; j++){
+        if(tabuleiro[linha_cone + i][coluna_cone + j] != 0){
+            sobreposicao = 1;
+        }
     }
 }
+
+// --> Copiando o Cone APENAS se não houver sobreposição
+if(sobreposicao==0){
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 5; j++){
+            tabuleiro[linha_cone + i][coluna_cone + j] = cone[i][j];
+        }
+    }
+}
+
 
 printf("\n");
 
@@ -68,11 +81,23 @@ for(int i=0; i<5; i++){
     printf("\n");
 }
 
-// --> Copiando a Matriz da Cruz para o tabuleiro
+// --> Verificando sobreposição da Cruz
+sobreposicao = 0;
 
-for(int i=0; i<5; i++){
-    for(int j=0; j<5; j++){
-        tabuleiro[linha_cruz+i][coluna_cruz+j] = cruz[i][j];
+for(int i = 0; i < 5; i++){
+    for(int j = 0; j < 5; j++){
+        if(tabuleiro[linha_cruz + i][coluna_cruz + j] != 0){
+            sobreposicao = 1;
+        }
+    }
+}
+
+// --> Copiando a cruz APENAS se não houver sobreposição
+if(sobreposicao==0){
+    for(int i = 0; i < 5; i++){
+        for(int j = 0; j < 5; j++){
+            tabuleiro[linha_cruz + i][coluna_cruz + j] = cruz[i][j];
+        }
     }
 }
 
@@ -106,19 +131,36 @@ for(int i=0; i<5; i++){
         }
         printf("%d ", losango[i][j]);
     }
-    
-// --> Copiando a Matriz do Losango para o tabuleiro
-
-for(int i=0; i<5; i++){
-    for(int j=0; j<5; j++){
-        tabuleiro[linha_losango+i][coluna_losango+j] = losango[i][j];
-    }
-}
 
     printf("\n");
 }
 
+// --> Verificando sobreposição do Losango
+sobreposicao = 0;
+
+for(int i = 0; i < 5; i++){
+    for(int j = 0; j < 5; j++){
+        if(tabuleiro[linha_losango + i][coluna_losango + j] != 0){
+            sobreposicao = 1;
+        }
+    }
+}
+
+// --> Copiando o Losango APENAS se não houver sobreposição
+if(sobreposicao==0){
+    for(int i = 0; i < 5; i++){
+        for(int j = 0; j < 5; j++){
+            tabuleiro[linha_losango + i][coluna_losango + j] = losango[i][j];
+        }
+    }
+}
+
 /*=====ESTRUTURA BÁSICA DO TABULEIRO=====*/
+
+if(sobreposicao != 0){
+    printf("\n\tERRO: SOBREPOSICAO!\n");
+}
+
 
 for(int i=0; i<LINHA; i++){
 
@@ -140,7 +182,6 @@ for(int i=0; i<LINHA; i++){
     printf("\n");
     
 }
-
 
     return 0;
 }
