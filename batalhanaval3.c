@@ -45,7 +45,7 @@ sobreposicao = 0;
 for(int i = 0; i < 3; i++){
     for(int j = 0; j < 5; j++){
         if(tabuleiro[linha_cone + i][coluna_cone + j] != 0){
-            sobreposicao = 1;
+            sobreposicao++;
         }
     }
 }
@@ -58,7 +58,6 @@ if(sobreposicao==0){
         }
     }
 }
-
 
 printf("\n");
 
@@ -82,12 +81,11 @@ for(int i=0; i<5; i++){
 }
 
 // --> Verificando sobreposição da Cruz
-sobreposicao = 0;
 
 for(int i = 0; i < 5; i++){
     for(int j = 0; j < 5; j++){
         if(tabuleiro[linha_cruz + i][coluna_cruz + j] != 0){
-            sobreposicao = 1;
+            sobreposicao++;
         }
     }
 }
@@ -136,12 +134,11 @@ for(int i=0; i<5; i++){
 }
 
 // --> Verificando sobreposição do Losango
-sobreposicao = 0;
 
 for(int i = 0; i < 5; i++){
     for(int j = 0; j < 5; j++){
         if(tabuleiro[linha_losango + i][coluna_losango + j] != 0){
-            sobreposicao = 1;
+            sobreposicao++;
         }
     }
 }
@@ -156,11 +153,6 @@ if(sobreposicao==0){
 }
 
 /*=====ESTRUTURA BÁSICA DO TABULEIRO=====*/
-
-if(sobreposicao == 1){
-    printf("\n\tERRO: SOBREPOSICAO!\n");
-}
-
 
 for(int i=0; i<LINHA; i++){
 
@@ -181,6 +173,10 @@ for(int i=0; i<LINHA; i++){
     
     printf("\n");
     
+}
+
+if(sobreposicao != 0){
+    printf("\n\t  ERRO: SOBREPOSICAO!\n");
 }
 
     return 0;
