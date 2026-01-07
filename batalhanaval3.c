@@ -157,7 +157,7 @@ if(sobreposicao==0){
 
 /*=====ESTRUTURA BÁSICA DO TABULEIRO=====*/
 
-if(sobreposicao != 0){
+if(sobreposicao == 1){
     printf("\n\tERRO: SOBREPOSICAO!\n");
 }
 
